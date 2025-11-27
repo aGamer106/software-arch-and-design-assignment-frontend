@@ -1,3 +1,45 @@
 body {
     background-color: #3a6737;
+    text-shadow: 4px 4px 4px #616161;
+}
+
+.consumer-login-form {
+    padding:  50px 300px;
+    box-sizing: border-box;
+    text-shadow: 4px 4px 4px #616161;
+}
+
+form .txt-field {
+    position: relative;
+    display: block;
+    text-shadow: 4px 4px 4px #616161;
+}
+
+label {
+    font-size: 23px;
+    bottom: 5px;
+    color: white;
+    font-family: Biko, Monaco, monospace;
+    line-height: 26px;
+    text-shadow: 4px 4px 4px #616161;
+}
+
+input {
+    width: 470px;
+    border: black;
+    border-radius: 70px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: Biko, Monaco, monospace;
+    font-size: 25px;
+    color: white;
+    text-shadow: 4px 4px 4px #616161;
+}
+
+.button {
+    height: 40px;
+    width: 180px;
 }
