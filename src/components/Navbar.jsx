@@ -2,6 +2,7 @@ import React from "react";
 import {useState} from "react";
 import '../static/css/navbar.css'
 import {Link} from "react-router-dom";
+import '../static/util/ABC Limited Logo.png'
 
 function Navbar(props) {
 
@@ -15,6 +16,7 @@ function Navbar(props) {
 
     return (
         <nav className={'nav'}>
+            {/*<img src={'../static/util/ABC Limited Logo.png'}/>*/}
             <a href={'/'} className={'nav-brand'}>ABC Limited</a>
             <ul className={active}>
                 {/*<li className={'nav-item'}><a href={'#'} className={'nav-link'}>Home</a></li>*/}
