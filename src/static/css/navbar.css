@@ -1,7 +1,7 @@
-*, *::after, *::before {
-    margin: 0;
-    box-sizing: border-box;
-}
+/**, *::after, *::before {*/
+/*    margin: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
 
 html {
     font-size: 62.5%;
@@ -18,7 +18,14 @@ li {
 a {
     font-family: "Outfit", sans-serif;
     text-decoration: none;
-    color: darkgray;
+    color: #ffffff;
+
+}
+
+a:hover {
+    text-decoration: underline;
+    color: aquamarine;
+    transition: 1s;
 }
 
 .nav {
@@ -26,7 +33,7 @@ a {
     align-items: center;
     justify-content: space-around;
     height: 8vh;
-    background: rgb(7, 148, 19);
+    background: rgb(117, 189, 103);
 }
 
 .nav-brand {
