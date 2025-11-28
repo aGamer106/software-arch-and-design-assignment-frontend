@@ -1,26 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import '../src/static/css/home.css'
-import '../src/static/util/call-centre-pic.jpg';
+import './static/css/home.css';
+import './static/util/call-centre-pic.jpg';
 import HomeForm from "./components/HomeForm";
-import {Button, TextField} from "@mui/material";
-import {Form} from "react-router-dom";
+import ConsumerDashboard from "./components/ConsumerDashboard";
+import {BrowserRouter} from "react-router-dom";
 
+// --- THE FIX IS HERE ---
+// You must import 'BrowserRouter' and alias it as 'Router'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App(props) {
+    return (
+        // This 'Router' is now actually 'BrowserRouter'
+        <Router>
+            <div>
+                <Navbar/>
+                <Routes>
+                    {/* Route for the Consumer Login (Home) */}
+                    <Route path="/" element={<HomeForm />} />
 
-
-
-  return (
-    <div>
-        <Navbar/>
-        <HomeForm/>
-        <Footer/>
-    </div>
-  );
+                    {/* Route for the Consumer Dashboard (Protected) */}
+                    <Route path="/my-area" element={<ConsumerDashboard />} />
+                </Routes>
+                <Footer/>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
