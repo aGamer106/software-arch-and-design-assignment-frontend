@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import '../static/css/navbar.css';
+import { DownOutlined, UserOutlined, LogoutOutlined } from '@ant-design/icons';
 import logo from '../static/util/ABC Limited Logo.png';
+import {Dropdown, Space} from "antd";
 
 function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
 
     const [user, setUser] = useState(null);
-
     const [time, setTime] = useState(new Date());
     const [weatherData, setWeatherData] = useState({
         location: "Locating...",
@@ -18,6 +19,9 @@ function Navbar() {
 
     const [active, setActive] = useState('nav-menu');
     const [toggleIcon, setToggleIcon] = useState('nav-toggler');
+
+    // Dropdown State
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     useEffect(() => {
         const checkUser = () => {
@@ -29,6 +33,7 @@ function Navbar() {
             }
         };
         checkUser();
+        setDropdownOpen(false);
     }, [location]);
 
     useEffect(() => {
@@ -67,7 +72,7 @@ function Navbar() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => fetchWeather(position.coords.latitude, position.coords.longitude),
-                () => fetchWeather(51.5074, -0.1278) // Fallback London
+                () => fetchWeather(51.5074, -0.1278)
             );
         } else {
             fetchWeather(51.5074, -0.1278);
@@ -82,6 +87,33 @@ function Navbar() {
         active === 'nav-menu' ? setActive('nav-menu nav-active') : setActive('nav-menu');
         toggleIcon === 'nav-toggler' ? setToggleIcon('nav-toggler toggle') : setToggleIcon('nav-toggler');
     }
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        navigate("/");
+    };
+
+    const menuItems = [
+        {
+            key: '1',
+            label: (
+                <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    Profile
+                </Link>
+            ),
+            icon: <UserOutlined />,
+        },
+        {
+            type: 'divider',
+        },
+        {
+            key: '2',
+            label: 'Logout',
+            icon: <LogoutOutlined />,
+            danger: true,
+            onClick: handleLogout,
+        },
+    ];
 
     if (user) {
         return (
@@ -106,12 +138,17 @@ function Navbar() {
                     </div>
 
                     <div className="myarea-container">
-                        <button className="myarea-btn">
-                            MyArea ▼
-                        </button>
+                        <Dropdown menu={{items: menuItems}} trigger={['click']} placement="bottomRight">
+                            <button className="myarea-btn" onClick={(e) => e.preventDefault()}>
+                                <Space>
+                                    MyArea
+                                    <DownOutlined/>
+                                </Space>
+                            </button>
+                        </Dropdown>
                     </div>
 
-                    <div className="nav-toggler">
+                    <div className="nav-toggler" onClick={navToggle}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>
