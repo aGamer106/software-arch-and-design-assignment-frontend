@@ -1,14 +1,10 @@
-/**, *::after, *::before {*/
-/*    margin: 0;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
 html {
     font-size: 62.5%;
 }
 
 body {
     font-size: 1.6rem;
+    margin: 0;
 }
 
 li {
@@ -19,7 +15,6 @@ a {
     font-family: "Outfit", sans-serif;
     text-decoration: none;
     color: #ffffff;
-
 }
 
 a:hover {
@@ -31,29 +26,95 @@ a:hover {
 .nav {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 8vh;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 70px;
     background: rgb(117, 189, 103);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .nav-brand {
     font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    /*font-weight: <weight>;*/
-    font-style: normal;
     text-transform: uppercase;
     font-weight: bold;
-
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: 0.5px;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     gap: 3rem;
 }
 
-.nav-toggler div{
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.nav-logo-img {
+    height: 30px;
+    width: auto;
+}
+
+.nav-brand-text {
+    font-family: "Outfit", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.weather-widget {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+}
+
+.weather-icon {
+    font-size: 1.4rem;
+}
+
+.myarea-btn {
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.myarea-btn:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.nav-toggler div {
     width: 3rem;
     height: 0.2rem;
     margin: 0.4rem;
@@ -66,35 +127,48 @@ a:hover {
     display: none;
 }
 
-/* responsiveness adjustments */
 @media screen and (max-width: 767px) {
     .nav-toggler {
         display: block;
     }
+
     .nav-menu {
         position: fixed;
-        top: 7vh;
+        top: 70px;
         right: 0;
         width: 50%;
-        height: 93vh;
+        height: calc(100vh - 70px);
         background: rgb(0, 28, 73);
         flex-direction: column;
+        justify-content: center;
         transform: translateX(100%);
         transition: 0.5s ease-in;
     }
-}
 
-.nav-active {
-    transform: translateX(0);
-}
+    .nav-right {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 50%;
+        height: calc(100vh - 70px);
+        background: rgb(0, 28, 73);
+        flex-direction: column;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: 0.5s ease-in;
+    }
 
-/* Toggler Icon Animation Settings */
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-4px, -5px);
-}
-.toggle .line2 {
-    opacity: 0;
-}
-.toggle .line3 {
-    transform: rotate(45deg) translate(-4px, -5px);
+    .nav-active {
+        transform: translateX(0);
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-4px, -5px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-4px, -5px);
+    }
 }
