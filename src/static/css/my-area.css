@@ -1,0 +1,105 @@
+.dashboard-container {
+    padding: 50px 350px;
+    background-color: #3a6737;
+    min-height: 100vh;
+    position: relative;
+}
+
+h1 {
+    font-family: Biko, Monaco, monospace;
+    color: white;
+    text-shadow: 4px 4px 4px #616161;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: Biko, Monaco, monospace;
+    color: white;
+    text-shadow: 4px 4px 4px #616161;
+}
+
+.welcome-message {
+    font-family: Biko, Monaco, monospace;
+    color: #fffcfc;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.section-title {
+    margin-bottom: 15px;
+    color: white;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.complaints-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.complaint-card {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.complaint-card .MuiCardContent-root {
+    flex-grow: 1;
+}
+
+.complaint-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.complaint-desc {
+    color: black;
+    font-size: 16px;
+}
+
+.status-text {
+    color: #444;
+    margin-bottom: 12px !important;
+}
+
+.status-label {
+    color: #1976d2;
+}
+
+.fab-container {
+    position: fixed;
+    bottom: 70px;
+    right: 40px;
+    z-index: 1000;
+}
+
+.custom-fab {
+    background-color: #d32f2f !important;
+    color: white !important;
+    width: 65px !important;
+    height: 65px !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.custom-fab:hover {
+    background-color: #b71c1c !important;
+}
+
+.material-symbols-outlined {
+    font-size: 32px !important;
+}
