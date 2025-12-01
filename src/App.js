@@ -9,6 +9,7 @@ import ConsumerDashboard from "./components/ConsumerDashboard";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ConsumerProfile from "./components/ConsumerProfile";
+import AdminLoginPage from "./components/AdminLoginPage";
 
 function App(props) {
     return (
@@ -20,6 +21,7 @@ function App(props) {
                     <Route path="/" element={<HomeForm />} />
                     <Route path="/profile" element={<ConsumerProfile />} />
                     <Route path="/my-area" element={<ConsumerDashboard />} />
+                    <Route path="/admin-login" element={<AdminLoginPage />} />
                 </Routes>
                 <Footer/>
             </div>
