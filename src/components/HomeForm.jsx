@@ -6,30 +6,26 @@ import api from "../APIConfig";
 function HomeForm(props) {
     const navigate = useNavigate();
 
-    // State to store input values
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(""); // Clear previous errors
+        setError("");
 
         try {
-            // Send POST request to Spring Boot
+
             const response = await api.post("/auth/login", {
                 email: email,
                 password: password
             });
 
-            // Check the response
             if (response.status === 200) {
                 const role = response.data.role;
 
                 if (role === "CONSUMER") {
-                    // Save user info
                     localStorage.setItem("user", JSON.stringify(response.data));
-                    // Redirect to the dashboard
                     navigate("/my-area");
                 } else {
                     setError("This login is for Consumers only. Please use the Staff Portal.");
@@ -84,7 +80,6 @@ function HomeForm(props) {
                     />
                 </label>
 
-                {/* Error Message Display */}
                 {error && <p style={{ color: 'red', fontWeight: 'bold' }}>{error}</p>}
 
                 <div>
