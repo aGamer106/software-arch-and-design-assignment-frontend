@@ -27,7 +27,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 0 350px;
     height: 70px;
     background: rgb(117, 189, 103);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);

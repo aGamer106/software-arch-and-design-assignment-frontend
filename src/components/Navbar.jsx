@@ -20,7 +20,6 @@ function Navbar() {
     const [active, setActive] = useState('nav-menu');
     const [toggleIcon, setToggleIcon] = useState('nav-toggler');
 
-    // Dropdown State
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     useEffect(() => {
