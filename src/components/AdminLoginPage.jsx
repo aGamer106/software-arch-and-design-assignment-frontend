@@ -28,23 +28,26 @@ function AdminLoginPage() {
 
                 switch(role) {
                     case "HELP_DESK_AGENT":
-                        alert("Login Successful! Redirecting to Agent Dashboard...");
-                        // navigate("/agent-dashboard"); // We will build this next
+                        navigate("/agent-dashboard");
                         break;
                     case "HELP_DESK_MANAGER":
                         alert("Login Successful! Redirecting to Manager Dashboard...");
-                        // navigate("/manager-dashboard");
+                        navigate("/manager-dashboard");
                         break;
                     case "ADMIN":
                         alert("Login Successful! Redirecting to Admin Panel...");
-                        // navigate("/admin-panel");
+                        navigate("/admin-panel");
                         break;
+                    case "SUPPORT_PERSON":
+                        navigate("/support-dashboard");
+                        break;
+
                     case "CONSUMER":
                         setError("This portal is for Staff only. Please use the Home page.");
                         localStorage.removeItem("user");
                         break;
                     default:
-                        setError("Unknown role. Please contact support.");
+                        setError("Unknown role: " + role);
                 }
             }
         } catch (err) {
@@ -66,7 +69,6 @@ function AdminLoginPage() {
                 <form onSubmit={handleLogin}>
                     <div className='credential-fields'>
                         <div className="field-group">
-                            {/* Material UI Filled Variant */}
                             <TextField
                                 id="email"
                                 label="Admin/HDM/HDA/SP Email Address"
@@ -101,7 +103,7 @@ function AdminLoginPage() {
                             color="primary"
                             type="submit"
                             size="large"
-                            style={{backgroundColor: '#1976d2', padding: '10px 40px'}}
+                            style={{ backgroundColor: '#1976d2', padding: '10px 40px' }}
                         >
                             Login
                         </Button>
