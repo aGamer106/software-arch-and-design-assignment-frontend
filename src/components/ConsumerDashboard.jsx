@@ -53,7 +53,6 @@ function ConsumerDashboard() {
         if (!user) return;
 
         try {
-            // POST to backend
             await api.post(`/consumer/complaints/${user.id}`, newComplaint);
             fetchComplaints(user.id);
             setNewComplaint({ title: "", description: "" });
