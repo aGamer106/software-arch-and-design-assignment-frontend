@@ -156,17 +156,17 @@ function AgentDashboard() {
                         <DialogContent style={{ marginTop: 20 }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
-                                    <Typography variant="subtitle2" color="textSecondary">Consumer Name</Typography>
-                                    <Typography variant="body1">{selectedTicket.consumer?.name}</Typography>
+                                    <Typography variant="subtitle2" color="black" fontSize='16px'>Consumer Name</Typography>
+                                    <Typography variant="body1" color="black" fontSize='16px'>{selectedTicket.consumer?.name}</Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant="subtitle2" color="textSecondary">Contact Phone</Typography>
-                                    <Typography variant="body1">{selectedTicket.consumer?.phoneNumber}</Typography>
+                                    <Typography variant="subtitle2" color="black" fontSize='16px'>Contact Phone</Typography>
+                                    <Typography variant="body1" color="black" fontSize='16px'>{selectedTicket.consumer?.phoneNumber}</Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant="subtitle2" color="textSecondary" style={{ marginTop: 10 }}>Description</Typography>
-                                    <div style={{ padding: 15, backgroundColor: '#f5f5f5', borderRadius: 4 }}>
-                                        <Typography variant="body1">{selectedTicket.description}</Typography>
+                                    <Typography variant="subtitle2" color="black" style={{ display: 'flex' }} fontSize='16px'>Description</Typography>
+                                    <div style={{ padding: 15, backgroundColor: 'gray', borderRadius: 4 }}>
+                                        <Typography variant="body1" color="black" fontSize='16px'>{selectedTicket.description}</Typography>
                                     </div>
                                 </Grid>
                             </Grid>
